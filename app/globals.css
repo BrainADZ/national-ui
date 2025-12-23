@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+/* ================================
+   ROOT VARIABLES
+================================ */
+:root {
+
+  /* FONT TOKENS */
+  --font-body: var(--font-body);
+  --font-heading: var(--font-heading);
+}
+
+/* Dark mode (optional) */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b0f17;
+    --foreground: #e5e7eb;
+  }
+} */
+
+/* ================================
+   BASE RESET
+================================ */
+html {
+  font-size: 16px; /* DO NOT CHANGE */
+}
+
+body {
+  font-family: var(--font-body), system-ui, -apple-system, Segoe UI, Roboto,
+    Arial, sans-serif;
+
+  font-weight: 400;
+  line-height: 1.65;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================================
+   HEADINGS (GLOBAL)
+   Engineering / Corporate Style
+================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), var(--font-body), system-ui, -apple-system,
+    Segoe UI, Roboto, Arial, sans-serif;
+
+  font-weight: 700;
+  /* color: #111827; */
+  letter-spacing: -0.015em; /* tight, premium */
+  line-height: 1.25;
+  /* margin: 0; */
+}
+h3 {
+  font-weight: 600;
+}
+
+h4 {
+  font-weight: 600;
+}
+
+h5 {
+  font-weight: 600;
+}
+
+h6 {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* ================================
+   PARAGRAPHS & BODY TEXT
+================================ */
+p {
+  line-height: 1.7;
+  /* color: #374151; gray-700 */
+}
+
+/* Strong / emphasis */
+strong {
+  font-weight: 600;
+  /* color: #111827; */
+}
+
+/* ================================
+   SMALL TEXT / META
+================================ */
+small,
+.text-small {
+  font-size: 0.75rem; /* 12px */
+  line-height: 1.4;
+  /* color: #6b7280; gray-500 */
+}
+
+/* ================================
+   LINKS
+================================ */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   LISTS
+================================ */
+
+
+/* ================================
+   BUTTONS / UI TEXT
+================================ */
+button {
+  font-family: var(--font-body), system-ui, -apple-system, Segoe UI, Roboto,
+    Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ================================
+   LABELS / CAPS TEXT (MD Desk, Tags)
+================================ */
+.label,
+.text-label {
+  font-size: 0.6875rem; /* 11px */
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  /* color: #f97316; [#ee9d54] */
+}
+.logo-force-left {
+  left: -31px !important;
+}
