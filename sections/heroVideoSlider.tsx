@@ -11,7 +11,7 @@
 
 export default function HeroVideoSection() {
   return (
-    <section className="relative h-[92vh] min-h-[620px] w-full overflow-hidden">
+    <section className="relative h-[30vh] md:h-[92vh] min-h-37.5 md:min-h-155 w-full overflow-hidden">
       {/* BG VIDEO */}
       <video
         className="absolute inset-0 h-full w-full object-cover"
