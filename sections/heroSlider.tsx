@@ -61,7 +61,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <section className="relative h-[calc(100vh-80px)] min-h-[580px] w-full overflow-hidden">
+    <section className="relative h-[calc(100vh-80px)] min-h-145 w-full overflow-hidden">
       {SLIDES.map((slide, index) => {
         const isActive = index === activeIndex;
 
@@ -84,7 +84,7 @@ export default function HeroSlider() {
             </div>
 
             {/* Content */}
-            <div className="relative z-30 mx-auto flex h-full max-w-[1700px] items-center px-4 lg:px-6">
+            <div className="relative z-30 mx-auto flex h-full max-w-425 items-center px-4 lg:px-6">
               <div className="max-w-2xl text-white">
                 <h1 className="mb-4 text-3xl font-bold leading-tight md:text-5xl">
                   {slide.title}

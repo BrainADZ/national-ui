@@ -61,12 +61,8 @@ export default function CompetitiveAdvantageSection() {
             <div
               key={title}
               className={`relative flex h-full flex-col rounded-2xl p-6 transition-all duration-300
-                hover:-translate-y-1 hover:shadow-xl
-                ${
-                  highlight
-                    ? "border border-orange-200 bg-orange-50/50"
-                    : "border border-gray-200 bg-white"
-                }
+                hover:-translate-y-1 hover:shadow-xl border border-gray-200 bg-white
+                
               `}
             >
               {/* top accent */}
