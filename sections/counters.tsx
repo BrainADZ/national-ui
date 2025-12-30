@@ -75,7 +75,7 @@ export default function StatsSection() {
 
   return (
     <section className="bg-[#f4f5f7] py-16">
-      <div className="mx-auto max-w-[1700px] px-2 md:px-4">
+      <div className="mx-auto max-w-425 px-2 md:px-4">
         <div
           ref={sectionRef}
           className="overflow-hidden bg-white shadow-[0_18px_45px_rgba(15,23,42,0.08)]"

@@ -1,9 +1,8 @@
- 
-export default function Footer() {
+ export default function Footer() {
   return (
     <footer className="bg-[#0c0c0c] text-gray-300 pt-14 pb-8 border-t border-white/10">
       
-      <div className="max-w-[1700px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-425 mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
         {/* Company Info */}
         <div>
@@ -83,12 +82,12 @@ export default function Footer() {
       <div className="mt-10 mb-6 border-t border-white/10"></div>
 
       {/* Bottom Bar */}
-      <div className="max-w-[1500px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+      <div className="max-w-425 mx-auto px-6 flex flex-col md:flex-row justify-around items-center text-sm text-gray-400">
         <p className="text-center md:text-left">
           © {new Date().getFullYear()} National Engineers. All Rights Reserved.
         </p>
 
-        <div className="flex gap-6 mt-3 md:mt-0">
+        <div className="flex gap-6 mt-3 md:mt-0 pb-5 md:pd-2">
           <a href="#" className="hover:text-[#ee9d54] transition">Privacy Policy</a>
           <a href="#" className="hover:text-[#ee9d54] transition">Terms of Service</a>
         </div>

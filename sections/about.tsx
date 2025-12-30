@@ -21,7 +21,7 @@ export default function AboutSection() {
 
   return (
     <section className="bg-white py-16 lg:py-20">
-      <div className="mx-auto flex max-w-[1700px] flex-col gap-10 px-2 lg:flex-row lg:px-4">
+      <div className="mx-auto flex max-w-425 flex-col gap-10 px-2 lg:flex-row lg:px-4">
         
         {/* LEFT CONTENT */}
         <div className="flex-1 text-gray-900">
@@ -36,7 +36,7 @@ export default function AboutSection() {
           </h2>
 
           <p className="mt-5 max-w-3xl text-sm leading-relaxed text-gray-600 md:text-base">
-            Welcome to National Engineers – where advanced manufacturing meets
+            Welcome to National Engineers where advanced manufacturing meets
             application-driven engineering. With decades of experience in
             radiators and heat-transfer products, we partner with OEMs and
             end-users to deliver tailored solutions, reliable performance, and
@@ -68,7 +68,7 @@ export default function AboutSection() {
                   >
                     {label}
                     {isActive && (
-                      <div className="mt-3 h-[3px] w-full bg-[#ee9d54]" />
+                      <div className="mt-3 h-0.75 w-full bg-[#ee9d54]" />
                     )}
                   </button>
                 );
@@ -89,7 +89,7 @@ export default function AboutSection() {
 
         {/* RIGHT IMAGE BLOCK */}
         <div className="flex-1 flex items-center justify-center">
-          <div className="relative h-[260px] w-full overflow-hidden rounded-lg shadow-lg sm:h-80 lg:h-[380px]">
+          <div className="relative h-65 w-full overflow-hidden rounded-lg shadow-lg sm:h-80 lg:h-95">
             <img
               src="/1.webp"
               alt="National Engineers facility"

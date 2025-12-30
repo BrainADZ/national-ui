@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useEffect, useState } from "react";
-import { X, Phone, Mail, Building2 } from "lucide-react";
+import { X, Phone, Mail, Building2, Paperclip } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -18,6 +19,9 @@ export default function FloatingActions({
 }: Props) {
   const [open, setOpen] = useState(false);
 
+  // ✅ form states (optional but useful)
+  const [attachment, setAttachment] = useState<File | null>(null);
+
   const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     whatsappMessage
   )}`;
@@ -26,7 +30,7 @@ export default function FloatingActions({
   useEffect(() => {
     AOS.init({
       duration: 500,
-      once: true, // ek baar animate hoga
+      once: true,
       easing: "ease-out",
       offset: 10,
     });
@@ -51,7 +55,7 @@ export default function FloatingActions({
     };
   }, [open]);
 
-  // ✅ modal open/close pe AOS refresh (optional but helpful)
+  // ✅ modal open/close pe AOS refresh
   useEffect(() => {
     AOS.refreshHard();
   }, [open]);
@@ -134,7 +138,7 @@ export default function FloatingActions({
         data-aos="fade-up"
         data-aos-delay="120"
       >
-        <div className="mx-auto max-w-[1400px] border-t border-gray-200 bg-white/95 backdrop-blur">
+        <div className="mx-auto max-w-350 border-t border-gray-200 bg-white/95 backdrop-blur">
           <div className="grid grid-cols-3">
             <a
               href={waLink}
@@ -220,7 +224,12 @@ export default function FloatingActions({
             <form
               onSubmit={(e) => {
                 e.preventDefault();
+
+                // attachment is available here if you want to send to API
+                // console.log("attachment:", attachment);
+
                 setOpen(false);
+                setAttachment(null);
               }}
               className="px-6 pb-6"
             >
@@ -282,6 +291,42 @@ export default function FloatingActions({
                     />
                   </div>
                 </div>
+
+                {/* ✅ NEW: Attachment field */}
+                <div className="sm:col-span-2">
+                  <label className="text-xs font-semibold text-gray-700">
+                    Attachment (optional)
+                  </label>
+
+                  <div className="mt-1 flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2.5 focus-within:border-[#ee9d54] focus-within:ring-1 focus-within:ring-[#ee9d54]">
+                    <Paperclip className="h-4 w-4 text-gray-400" />
+
+                    <input
+                      type="file"
+                      className="w-full text-sm outline-none file:mr-3 file:rounded-md file:border-0 file:bg-gray-100 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-gray-800 hover:file:bg-gray-200"
+                      accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg,.webp"
+                      onChange={(e) => {
+                        const file = e.target.files?.[0] || null;
+
+                        // optional: 5MB limit
+                        if (file && file.size > 5 * 1024 * 1024) {
+                          alert("File size should be less than 5MB.");
+                          e.currentTarget.value = "";
+                          setAttachment(null);
+                          return;
+                        }
+
+                        setAttachment(file);
+                      }}
+                    />
+                  </div>
+
+                  {attachment && (
+                    <p className="mt-1 text-xs text-gray-600">
+                      Selected: <span className="font-semibold">{attachment.name}</span>
+                    </p>
+                  )}
+                </div>
               </div>
 
               <div className="mt-4">
@@ -299,7 +344,10 @@ export default function FloatingActions({
               <div className="mt-5 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-end">
                 <button
                   type="button"
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    setOpen(false);
+                    setAttachment(null);
+                  }}
                   className="rounded-lg border border-gray-200 px-4 py-2.5 text-sm font-semibold text-gray-800 hover:bg-gray-50"
                 >
                   Cancel

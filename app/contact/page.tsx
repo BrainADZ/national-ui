@@ -123,7 +123,7 @@ export default function ContactPage() {
                                 Response Time
                             </p>
                             <p className="mt-1 text-sm font-semibold text-white">
-                                Within 24 hours (working days)
+                               Within 24 business hours
                             </p>
                         </div>
                         <div className="rounded-xl border border-white/15 bg-white/10 p-4 backdrop-blur">
@@ -219,10 +219,10 @@ export default function ContactPage() {
                                     <p className="text-sm font-bold text-gray-900">What to include</p>
                                 </div>
                                 <ul className="mt-3 space-y-2 text-sm text-gray-600">
-                                    <li>• Equipment type & size</li>
-                                    <li>• MOC (SS, alloy, clad)</li>
-                                    <li>• Pressure/temperature</li>
-                                    <li>• Delivery location & timeline</li>
+                                    <li>• In MOC (SS, MS, Aluminum, etc.)</li>
+                                    <li>• Equipment Type & Size</li>
+                                    <li>• Pressure/Temperature</li>
+                                    <li>• Delivery Location & Timeline</li>
                                 </ul>
                             </div>
 
@@ -259,7 +259,7 @@ export default function ContactPage() {
 
             {/* MAP */}
             <section id="location" className="bg-white py-16 lg:py-20">
-                <div className="mx-auto max-w-[1700px] px-6 lg:px-0">
+                <div className="mx-auto max-w-425 px-6 lg:px-2">
                     <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#ee9d54]">
                         Location
                     </p>
@@ -273,7 +273,7 @@ export default function ContactPage() {
                     <div className="mt-8 overflow-hidden rounded-2xl border border-gray-200 shadow-lg">
                         <iframe
                             title="National Engineers location map"
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7444.977205166529!2d72.857456!3d21.093078!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be050e74db0e503%3A0xa316cd8ed6291d30!2sNational%20Engineers%20%26%20Steel%20Fabricators!5e0!3m2!1sen!2sin!4v1766473563802!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4580.561601274817!2d72.85553627525819!3d21.088028080576244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDA1JzE2LjkiTiA3MsKwNTEnMjkuMiJF!5e1!3m2!1sen!2sin!4v1767095847429!5m2!1sen!2sin"
                             width="100%"
                             height="420"
                             loading="lazy"

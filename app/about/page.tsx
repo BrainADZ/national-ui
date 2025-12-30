@@ -4,19 +4,19 @@ import MdDeskSection from "@/sections/MdDeskSection";
 import Link from "next/link";
 
 type Props = {
-  title?: string;
-  breadcrumbCurrent?: string;
-  imageUrl?: string; // right side image
+    title?: string;
+    breadcrumbCurrent?: string;
+    imageUrl?: string; // right side image
 };
 
 export default function AboutHero({
-  title = "NESF History",
-  breadcrumbCurrent = "About NESF",
-  imageUrl =
+    title = "NESF History",
+    breadcrumbCurrent = "About NESF",
+    imageUrl =
     "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2400&auto=format&fit=crop",
 }: Props) {
-  return (
-    <>
+    return (
+        <>
             <section className="relative">
                 {/* Background image */}
                 <div className="absolute inset-0">
@@ -32,8 +32,8 @@ export default function AboutHero({
                 </div>
 
                 {/* Content */}
-                <div className="relative">
-                    <div className="mx-auto max-w-[1700px] px-2 py-1 lg:px-4 lg:py-24">
+                <div className="relative pt-16 md:pt-2">
+                    <div className="mx-auto max-w-425 px-2 py-1 lg:px-4 lg:py-24">
                         {/* Breadcrumbs */}
                         <nav className="text-xs font-semibold uppercase tracking-[0.22em] text-white/80">
                             <ol className="flex flex-wrap items-center gap-2">
@@ -64,8 +64,8 @@ export default function AboutHero({
                 {/* Bottom separator for clean transition */}
                 <div className="h-10 w-full bg-linear-to-b from-black/10 to-white" />
             </section>
-    <MissionVisionSection/>
-    <MdDeskSection/>
-    </>
-  );
+            <MissionVisionSection />
+            <MdDeskSection />
+        </>
+    );
 }

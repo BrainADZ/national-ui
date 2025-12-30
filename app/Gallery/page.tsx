@@ -50,7 +50,7 @@ export default async function GalleryPage() {
                 </div>
 
                 {/* Content */}
-                <div className="relative">
+                <div className="relative pt-16 md:pt-2">
                     <div className="mx-auto max-w-[1700px] px-2 py-1 lg:px-4 lg:py-24">
                         {/* Breadcrumbs */}
                         <nav className="text-xs font-semibold uppercase tracking-[0.22em] text-white/80">

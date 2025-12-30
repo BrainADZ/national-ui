@@ -3,7 +3,7 @@
 export default function MissionVisionSection() {
     return (
         <section className="bg-white py-6 lg:py-8">
-            <div className="mx-auto max-w-[1700px] px-6 lg:px-4">
+            <div className="mx-auto max-w-425 px-6 lg:px-4">
                 {/* TOP CONTENT */}
                 <div data-aos="fade-up">
                     <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#ee9d54]">
