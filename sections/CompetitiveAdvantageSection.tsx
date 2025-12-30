@@ -39,7 +39,7 @@ const ADVANTAGES: Advantage[] = [
 export default function CompetitiveAdvantageSection() {
   return (
     <section className="bg-white py-16 lg:py-20">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
+      <div className="mx-auto max-w-350 px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#ee9d54]">
@@ -57,7 +57,7 @@ export default function CompetitiveAdvantageSection() {
 
         {/* Cards */}
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {ADVANTAGES.map(({ title, description, iconSrc, highlight }) => (
+          {ADVANTAGES.map(({ title, description, iconSrc}) => (
             <div
               key={title}
               className={`relative flex h-full flex-col rounded-2xl p-6 transition-all duration-300
