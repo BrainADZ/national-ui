@@ -68,7 +68,7 @@ export default function ProductsSection() {
         <div className="absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-[#EE9D54]/10 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto max-w-[1700px] px-0 lg:px-8">
+      <div className="relative mx-auto max-w-425 px-0 lg:px-8">
         {/* Header */}
         <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
@@ -127,7 +127,7 @@ export default function ProductsSection() {
   <div
     className="
       relative h-full w-full rounded-xl
-      [perspective:1200px]
+      perspective-distant
     "
   >
     {/* Flipper */}
@@ -135,15 +135,15 @@ export default function ProductsSection() {
       className="
         relative h-full w-full rounded-xl
         transition-transform duration-700
-        [transform-style:preserve-3d]
-        group-hover:[transform:rotateY(180deg)]
+        transform-3d
+        group-hover:transform-[rotateY(180deg)]
       "
     >
       {/* FRONT SIDE */}
       <div
         className="
           overflow-hidden rounded-xl bg-white/5 border border-white/10 shadow-sm
-          [backface-visibility:hidden]
+          backface-hidden
         "
       >
         {/* Image */}
@@ -179,8 +179,8 @@ export default function ProductsSection() {
       <div
         className="
           absolute inset-0 rounded-xl border border-black/10 bg-white shadow-sm
-          [transform:rotateY(180deg)]
-          [backface-visibility:hidden]
+          transform-[rotateY(180deg)]
+          backface-hidden
           overflow-hidden
         "
       >
