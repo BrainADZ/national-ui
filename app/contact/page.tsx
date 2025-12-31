@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import { Building2, Phone, Mail, Clock, MapPin, Send, FileText } from "lucide-react";
@@ -81,7 +82,7 @@ export default function ContactPage() {
                     <div className="pointer-events-none absolute -bottom-24 left-0 h-72 w-72 rounded-full bg-[#ee9d54]/10 blur-3xl" />
                 </div>
 
-                <div className="relative mx-auto max-w-[1700px] px-6 py-16 lg:px-5 lg:py-20">
+                <div className="relative mx-auto max-w-425 py-16 lg:px-5 lg:py-20">
                     {/* Breadcrumbs */}
                     <nav className="text-xs font-semibold uppercase tracking-[0.22em] text-white/80">
                         <ol className="flex flex-wrap items-center gap-2">
@@ -147,7 +148,7 @@ export default function ContactPage() {
                 data-aos="fade-right"
                 data-aos-delay="100"
             >
-                <div className="mx-auto max-w-[1700px] px-6 lg:px-0">
+                <div className="mx-auto max-w-425 px-6 lg:px-0">
                     <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#ee9d54]">
                         Contact Details
                     </p>
@@ -193,7 +194,7 @@ export default function ContactPage() {
             <section id="enquiry" className="bg-[#f7f8fa] py-16 lg:py-20"
 
             >
-                <div className="mx-auto grid max-w-[1700px] gap-10 px-6 lg:grid-cols-2 lg:gap-12 lg:px-0">
+                <div className="mx-auto grid max-w-425 gap-10 px-6 lg:grid-cols-2 lg:gap-12 lg:px-0">
                     {/* Left content */}
                     <div
                         data-aos="fade-left"

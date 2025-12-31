@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
@@ -16,7 +17,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: "About", href: "/about" },
   { label: "Products", href: "/Products" },
   { label: "Gallery", href: "/Gallery" },
-  { label: "News & Blogs", href: "/news-and-blogs" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
   {
     label: "E-Catalogue",
@@ -30,9 +31,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -41,7 +40,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // lock body scroll when mobile menu open
   useEffect(() => {
     if (!mobileOpen) return;
     const original = document.body.style.overflow;
@@ -61,19 +59,21 @@ export default function Navbar() {
   const hoverColor = "hover:text-[#ee9d54]";
 
   const headerBg = scrolled
-    ? "bg-white/95 shadow-sm backdrop-blur border-b border-gray-200"
+    ? "bg-white border-b border-gray-200"
     : "bg-transparent";
 
   const logo = useMemo(
     () => (
-      <Link href="/" className="flex items-center gap-3">
-        <div className="relative h-12 w-42.5 sm:h-14 sm:w-47.5">
+      <Link href="/" className="flex items-center gap-3 min-w-0">
+        {/* FIX: prevent shrinking + responsive width */}
+        <div className="relative h-12 w-46 xs:w-[155px] sm:h-14 sm:w-59 shrink-0">
           <Image
             src="/logo National.png"
             alt="National Engineers Logo"
             fill
             priority
-            className="object-contain logo-force-left"
+            className="object-contain"
+            sizes="180px"
           />
         </div>
       </Link>
@@ -87,7 +87,6 @@ export default function Navbar() {
         mobileOpen ? "pointer-events-auto" : "pointer-events-none"
       }`}
     >
-      {/* overlay */}
       <div
         onClick={() => setMobileOpen(false)}
         className={`absolute inset-0 bg-black/40 transition-opacity ${
@@ -95,18 +94,17 @@ export default function Navbar() {
         }`}
       />
 
-      {/* panel */}
       <div
         className={`absolute right-0 top-0 h-dvh w-[85%] max-w-sm bg-white shadow-2xl transition-transform ${
           mobileOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex items-center justify-between border-b border-gray-200 px-4 py-4">
-          <div className="relative h-10 w-37.5">
-            <Image
+          <div className="relative h-16 w-37.5 shrink-0">
+            <img
               src="/logo National.png"
               alt="National Engineers Logo"
-              fill
+            
               className="object-contain"
             />
           </div>
@@ -149,10 +147,10 @@ export default function Navbar() {
   return (
     <>
       <header className={`fixed inset-x-0 top-0 z-100 transition-all ${headerBg}`}>
-        <div className="mx-auto flex max-w-425 items-center justify-between px-2 py-3 lg:px-4">
+        {/* FIX: give a bit more safe horizontal padding */}
+        <div className="mx-auto flex max-w-425 items-center justify-between px-3 py-3 sm:px-4 lg:px-4">
           {logo}
 
-          {/* DESKTOP NAV */}
           <nav className="hidden items-center gap-6 lg:flex">
             {NAV_ITEMS.map((item) => {
               const active = isActive(item.href);
@@ -172,12 +170,11 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* MOBILE TOGGLE */}
           <button
             type="button"
             className={`lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border ${
               scrolled ? "border-gray-200 text-gray-900" : "border-white/30 text-white"
-            } bg-white/0 transition hover:bg-white/10`}
+            } bg-white/0 transition hover:bg-white/10 shrink-0`}
             onClick={() => setMobileOpen((p) => !p)}
             aria-label="Toggle menu"
           >
@@ -186,7 +183,6 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Render drawer via Portal to avoid stacking-context issues on scroll */}
       {mounted && createPortal(MobileDrawer, document.body)}
     </>
   );

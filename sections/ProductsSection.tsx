@@ -11,26 +11,36 @@ const PRODUCTS = [
     image:
       "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1400&h=1400&fit=crop",
     tag: "Material Handling",
+    description:
+      "Engineered for demanding material-handling environments, Forklift Radiators are designed to deliver consistent cooling performance under continuous load cycles. Built with high-efficiency cores and reinforced fin structures, these radiators ensure optimal heat dissipation even in confined warehouse spaces and high-ambient conditions. Precision manufacturing, vibration resistance, and pressure-tested assemblies provide long service life, reduced overheating risks, and reliable performance across intensive lifting, stacking, and logistics operations.",
   },
   {
     title: "Agricultural Radiator",
     image:
       "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1400&h=1400&fit=crop",
     tag: "Agriculture",
+    description:
+      "Agricultural Radiators are purpose-built to withstand harsh field conditions, including dust, debris, fluctuating temperatures, and extended operating hours. Featuring optimized fin density and robust tube construction, these radiators maintain stable engine temperatures during ploughing, harvesting, and irrigation activities. Their durable design minimizes clogging, improves airflow efficiency, and supports uninterrupted machinery performance, helping extend engine life and reduce downtime during critical farming seasons.",
   },
   {
     title: "Locomotive Radiator",
     image:
       "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1400&h=1400&fit=crop",
     tag: "Railways",
+    description:
+      "Designed for heavy-duty railway applications, Locomotive Radiators offer superior thermal management for continuous, high-power engine operations. Manufactured using high-grade materials and precision welding techniques, they deliver exceptional cooling efficiency while withstanding vibration, pressure fluctuations, and long-distance travel conditions. These radiators support reliable locomotive performance, enhanced fuel efficiency, and reduced maintenance requirements across freight and passenger rail systems.",
   },
   {
     title: "Genset Radiator",
     image:
       "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1400&h=1400&fit=crop",
     tag: "Power Backup",
+    description:
+      "Genset Radiators are designed to ensure stable and efficient cooling for power generators operating under variable loads and extended runtime conditions. With carefully engineered fin geometry and pressure-tested cores, these radiators maintain optimal engine temperatures during peak demand and emergency power scenarios. Their robust construction supports continuous operation, enhances generator reliability, and minimizes the risk of overheating in industrial, commercial, and backup power installations.",
   },
 ];
+
+
 
 export default function ProductsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -109,38 +119,98 @@ export default function ProductsSection() {
           {/* Products */}
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {visibleProducts.map((product, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-xl bg-white/5 border border-white/10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-white/20"
-              >
-                {/* Image */}
-                <div className="relative aspect-square overflow-hidden">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+<div
+  key={index}
+  className="group relative h-full"
+>
+  {/* Flip container */}
+  <div
+    className="
+      relative h-full w-full rounded-xl
+      [perspective:1200px]
+    "
+  >
+    {/* Flipper */}
+    <div
+      className="
+        relative h-full w-full rounded-xl
+        transition-transform duration-700
+        [transform-style:preserve-3d]
+        group-hover:[transform:rotateY(180deg)]
+      "
+    >
+      {/* FRONT SIDE */}
+      <div
+        className="
+          overflow-hidden rounded-xl bg-white/5 border border-white/10 shadow-sm
+          [backface-visibility:hidden]
+        "
+      >
+        {/* Image */}
+        <div className="relative aspect-square overflow-hidden">
+          <img
+            src={product.image}
+            alt={product.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
 
-                  {/* Premium overlay */}
-                  <div className="absolute inset-0 bg-linear-to-b from-black/10 via-black/15 to-black/55 transition-all duration-300 group-hover:to-black/65" />
+          {/* Premium overlay */}
+          <div className="absolute inset-0 bg-linear-to-b from-black/10 via-black/15 to-black/55 transition-all duration-300 group-hover:to-black/65" />
 
-                  {/* Tag pill */}
-                  <div className="absolute left-4 top-4 rounded-full bg-white/15 px-3 py-1 text-[8px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur">
-                    {product.tag}
-                  </div>
-                </div>
+          {/* Tag pill */}
+          <div className="absolute left-4 top-4 rounded-full bg-white/15 px-3 py-1 text-[8px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur">
+            {product.tag}
+          </div>
+        </div>
 
-                {/* Bottom bar */}
-                <div className="bg-[#EE9D54] px-5 py-4 text-center">
-                  <h3 className="text-white font-bold text-[14px] md:text-[17px] tracking-wide">
-                    {product.title}
-                  </h3>
-                  <div className="mx-auto mt-2 h-0.5 w-14 bg-white/80" />
-                </div>
+        {/* Bottom bar */}
+        <div className="bg-[#EE9D54] px-5 py-4 text-center">
+          <h3 className="text-white font-bold text-[14px] md:text-[17px] tracking-wide">
+            {product.title}
+          </h3>
+          <div className="mx-auto mt-2 h-0.5 w-14 bg-white/80" />
+        </div>
 
-                {/* Edge accent on hover */}
-                <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-white/10 transition group-hover:ring-2 group-hover:ring-[#EE9D54]/80" />
-              </div>
+        {/* Edge accent */}
+        <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-white/10 transition group-hover:ring-2 group-hover:ring-[#EE9D54]/80" />
+      </div>
+
+      {/* BACK SIDE */}
+      <div
+        className="
+          absolute inset-0 rounded-xl border border-black/10 bg-white shadow-sm
+          [transform:rotateY(180deg)]
+          [backface-visibility:hidden]
+          overflow-hidden
+        "
+      >
+        {/* Back header strip */}
+        <div className="bg-[#EE9D54] px-5 py-4">
+          <p className="text-[10px] md:text-xs font-semibold uppercase tracking-[0.18em] text-white/90">
+            {product.tag}
+          </p>
+          <h3 className="mt-1 text-white font-bold text-[15px] md:text-[18px] tracking-wide">
+            {product.title}
+          </h3>
+        </div>
+
+        {/* Back content */}
+        <div className="flex h-[calc(100%-64px)] flex-col justify-between p-5">
+          <p className="text-sm text-black/70 leading-relaxed">
+            {product.description}
+          </p>
+
+          <div className="mt-5">
+
+            <p className="mt-3 text-center text-[11px] text-black/50">
+              Hover out to return
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
             ))}
           </div>
         </div>
