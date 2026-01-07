@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { X, Phone, Mail, Building2, Paperclip } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 
 type Props = {
   whatsappNumber?: string;
@@ -19,14 +20,14 @@ export default function FloatingActions({
 }: Props) {
   const [open, setOpen] = useState(false);
 
-  // ✅ form states (optional but useful)
+  // attachment state
   const [attachment, setAttachment] = useState<File | null>(null);
 
   const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     whatsappMessage
   )}`;
 
-  // ✅ AOS init (entry animation)
+  // AOS init
   useEffect(() => {
     AOS.init({
       duration: 500,
@@ -55,79 +56,129 @@ export default function FloatingActions({
     };
   }, [open]);
 
-  // ✅ modal open/close pe AOS refresh
+  // modal open/close pe AOS refresh
   useEffect(() => {
     AOS.refreshHard();
   }, [open]);
 
+  // ✅ shared sizing so strip + icon height always same
+  const ROW_H = "h-12"; // change once if needed
+  const ICON_W = "w-12"; // icon box width
+  const STRIP_W = "w-56"; // hover strip width
+
   return (
     <>
-      {/* DESKTOP FLOATING (bottom-right) */}
+      {/* DESKTOP FLOATING (right side flush, only icons + hover strip) */}
       <div
-        className="fixed bottom-6 right-6 z-60 hidden md:flex"
+        className="fixed right-0 top-1/2 z-60 hidden -translate-y-1/2 md:flex"
         data-aos="fade-left"
         data-aos-delay="100"
       >
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 pr-2">
           {/* WhatsApp */}
-          <a
+          <Link
             href={waLink}
             target="_blank"
             rel="noreferrer"
-            className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+            className="group relative flex items-center"
+            aria-label="WhatsApp"
             data-aos="fade-up"
             data-aos-delay="150"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-lg transition">
+            {/* Hover strip (NO GAP, same HEIGHT) */}
+            <span
+              className={`pointer-events-none absolute right-12 top-0 ${ROW_H} ${STRIP_W}
+              translate-x-2 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100`}
+            >
+              <span
+                className={`flex ${ROW_H} w-full items-center  border border-gray-200 bg-white px-4 shadow-lg`}
+              >
+                <span className="text-sm font-semibold text-gray-900">
+                  WhatsApp
+                </span>
+                <span className="ml-2 text-xs text-gray-500">Quick chat</span>
+              </span>
+            </span>
+
+            {/* Icon (flush to right, same HEIGHT) */}
+            <span
+              className={`flex ${ROW_H} ${ICON_W} items-center justify-center border border-gray-200 bg-white shadow-lg transition hover:shadow-xl`}
+            >
               <img
                 src="/icons/whatsapp.svg"
                 alt="WhatsApp"
-                className="h-10 w-10"
+                className="h-7 w-7"
               />
             </span>
-            <div className="leading-tight">
-              <p className="text-sm font-semibold text-gray-900">WhatsApp</p>
-              <p className="text-xs text-gray-500">Quick chat</p>
-            </div>
-          </a>
+          </Link>
 
           {/* LinkedIn */}
-          <a
+          <Link
             href={linkedinUrl}
             target="_blank"
             rel="noreferrer"
-            className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+            className="group relative flex items-center"
+            aria-label="LinkedIn"
             data-aos="fade-up"
             data-aos-delay="220"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-lg transition">
+            {/* Hover strip (NO GAP, same HEIGHT) */}
+            <span
+              className={`pointer-events-none absolute right-12 top-0 ${ROW_H} ${STRIP_W}
+              translate-x-2 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100`}
+            >
+              <span
+                className={`flex ${ROW_H} w-full items-center  border border-gray-200 bg-white px-4 shadow-lg`}
+              >
+                <span className="text-sm font-semibold text-gray-900">
+                  LinkedIn
+                </span>
+                <span className="ml-2 text-xs text-gray-500">Follow updates</span>
+              </span>
+            </span>
+
+            {/* Icon (same HEIGHT) */}
+            <span
+              className={`flex ${ROW_H} ${ICON_W} items-center justify-center border border-gray-200 bg-white shadow-lg transition hover:shadow-xl`}
+            >
               <img
                 src="/icons/linkedin.svg"
                 alt="LinkedIn"
-                className="h-10 w-10"
+                className="h-7 w-7"
               />
             </span>
-            <div className="leading-tight">
-              <p className="text-sm font-semibold text-gray-900">LinkedIn</p>
-              <p className="text-xs text-gray-500">Follow updates</p>
-            </div>
-          </a>
+          </Link>
 
           {/* Enquiry */}
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="group flex items-center gap-3 rounded-xl bg-[#ee9d54] px-4 py-3 shadow-lg transition hover:-translate-y-0.5 hover:bg-[#ee9d54] hover:shadow-xl"
+            className="group relative flex items-center"
+            aria-label="Enquiry"
             data-aos="fade-up"
             data-aos-delay="290"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-lg">
-              <img src="/icons/sms.svg" alt="Enquiry" className="h-10 w-10" />
+            {/* Hover strip (NO GAP, same HEIGHT) */}
+            <span
+              className={`pointer-events-none absolute right-12 top-0 ${ROW_H} ${STRIP_W}
+              translate-x-2 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100`}
+            >
+              <span
+                className={`flex ${ROW_H} w-full items-center  border border-[#ee9d54]/30 bg-white px-4 shadow-lg`}
+              >
+                <span className="text-sm font-semibold text-gray-900">
+                  Enquiry
+                </span>
+                <span className="ml-2 text-xs text-gray-500">Get a callback</span>
+              </span>
             </span>
-            <div className="text-left leading-tight">
-              <p className="text-sm font-semibold text-white">Enquiry</p>
-              <p className="text-xs text-white/90">Get a callback</p>
-            </div>
+
+            {/* Icon (same HEIGHT) */}
+            <span
+              className={`flex ${ROW_H} ${ICON_W} items-center justify-center bg-[#ee9d54] shadow-lg transition hover:shadow-xl`}
+            >
+              <img src="/icons/sms.svg" alt="Enquiry" className="h-7 w-7" />
+            </span>
           </button>
         </div>
       </div>
@@ -224,10 +275,6 @@ export default function FloatingActions({
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-
-                // attachment is available here if you want to send to API
-                // console.log("attachment:", attachment);
-
                 setOpen(false);
                 setAttachment(null);
               }}
@@ -292,7 +339,7 @@ export default function FloatingActions({
                   </div>
                 </div>
 
-                {/* ✅ NEW: Attachment field */}
+                {/* Attachment */}
                 <div className="sm:col-span-2">
                   <label className="text-xs font-semibold text-gray-700">
                     Attachment (optional)
@@ -308,7 +355,6 @@ export default function FloatingActions({
                       onChange={(e) => {
                         const file = e.target.files?.[0] || null;
 
-                        // optional: 5MB limit
                         if (file && file.size > 5 * 1024 * 1024) {
                           alert("File size should be less than 5MB.");
                           e.currentTarget.value = "";
@@ -323,7 +369,8 @@ export default function FloatingActions({
 
                   {attachment && (
                     <p className="mt-1 text-xs text-gray-600">
-                      Selected: <span className="font-semibold">{attachment.name}</span>
+                      Selected:{" "}
+                      <span className="font-semibold">{attachment.name}</span>
                     </p>
                   )}
                 </div>
