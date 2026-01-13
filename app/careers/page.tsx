@@ -575,11 +575,11 @@ export default function CareersPage() {
               <div className="mt-3 space-y-2 text-sm text-gray-600">
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4 text-gray-400" />
-                  hr@nationalengineers.in
+                  admin@nationalengineers.com
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="h-4 w-4 text-gray-400" />
-                  +91 XXXXX XXXXX
+                  +91 95740 11132
                 </div>
               </div>
               <p className="mt-3 text-xs text-gray-500">

@@ -28,12 +28,12 @@ const INFO = [
     },
     {
         title: "Phone",
-        lines: ["+91 99XXXXXX90", "+91 98XXXXXX12"],
+        lines: ["+91 95740 11132"],
         icon: Phone,
     },
     {
         title: "Email",
-        lines: ["sales@nationalengrs.com", "info@nationalengrs.com"],
+        lines: ["niraj@nationalengrs.com", "admin@nationalengrs.com"],
         icon: Mail,
     },
     {
@@ -43,7 +43,7 @@ const INFO = [
     },
     {
         title: "Location",
-        lines: ["Surat – Industrial Area", "Gujarat, India"],
+        lines: ["Plot No. 1022, Cross Road No.87, Sachin GIDC, Surat - 394230"],
         icon: MapPin,
     },
 ];

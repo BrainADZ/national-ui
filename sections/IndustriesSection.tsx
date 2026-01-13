@@ -10,54 +10,55 @@ type Industry = {
 
 const INDUSTRIES: Industry[] = [
   {
-    name: "Chemical Plants",
+    name: "Man-Made Fiber",
     description:
-      "Process equipment engineered for aggressive chemical environments.",
+      "Process equipment for synthetic fiber manufacturing plants.",
     details:
-      "Designs focus on corrosion resistance, pressure integrity and thermal efficiency, ensuring safe and continuous plant operations.",
+      "Fabrication of pressure vessels, heat exchangers, and tanks tailored for polymerization and fiber production processes operating under controlled temperature and pressure conditions.",
     iconSrc: "/icons/flask.svg",
-  },
-  {
-    name: "Effluent Treatment",
-    description:
-      "Reliable solutions for wastewater and environmental management.",
-    details:
-      "Equipment suitable for ETP, WTP and ZLD systems, designed to handle corrosive media and fluctuating operating conditions.",
-    iconSrc: "/icons/water.svg",
   },
   {
     name: "Steel Plants",
     description:
-      "Heavy-duty fabrication for high-temperature steel processing.",
+      "Heavy-duty fabrication for steel processing plants.",
     details:
-      "Built to withstand extreme thermal loads, dust-laden environments and continuous production cycles in steel plants.",
+      "Manufacture of process equipment, ducting, and structural components engineered to withstand extreme thermal loads, abrasive environments, and continuous plant operations.",
     iconSrc: "/icons/i-beam.svg",
+  },
+  {
+    name: "Chemicals & Petrochemicals",
+    description:
+      "Equipment for aggressive chemical and petrochemical environments.",
+    details:
+      "Design and fabrication of pressure vessels and heat exchangers suitable for high-pressure, high-temperature, and corrosive service conditions.",
+    iconSrc: "/icons/oil-refinery.svg",
   },
   {
     name: "Fertilizers",
     description:
-      "Engineered equipment for fertilizer and agrochemical sectors.",
+      "Engineered equipment for fertilizer plants.",
     details:
-      "Proven solutions for urea, ammonia and allied processes with strict adherence to safety and international standards.",
+      "Fabrication of process equipment for urea and ammonia plants, manufactured in compliance with stringent safety norms and international engineering standards.",
     iconSrc: "/icons/agriculture.svg",
   },
   {
-    name: "Petrochemicals",
+    name: "Ship Building",
     description:
-      "Precision-built systems for refining and petrochemical units.",
+      "Marine-grade fabrication solutions.",
     details:
-      "Designed for high-pressure and high-temperature services in refineries, ensuring long-term reliability and performance.",
-    iconSrc: "/icons/oil-refinery.svg",
-  },
-  {
-    name: "Ship-building",
-    description:
-      "Marine-grade fabrication for offshore and shipyard applications.",
-    details:
-      "Equipment engineered to perform in corrosive marine environments with enhanced durability and compliance to marine norms.",
+      "Manufacture of tanks, pressure vessels, and structural assemblies designed for corrosive marine environments, ensuring durability and compliance with marine regulations.",
     iconSrc: "/icons/anchor.svg",
   },
+  {
+    name: "Effluent Treatment",
+    description:
+      "Solutions for wastewater and effluent treatment systems.",
+    details:
+      "Fabrication of tanks and process equipment for effluent treatment plants handling corrosive effluents and variable operating conditions.",
+    iconSrc: "/icons/water.svg",
+  },
 ];
+
 
 export default function IndustriesSection() {
   return (

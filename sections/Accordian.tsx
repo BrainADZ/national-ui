@@ -12,27 +12,32 @@ const FAQS: FaqItem[] = [
   {
     question: "What kind of equipment does National Engineers manufacture?",
     answer:
-      "We specialize in radiators, heat exchangers, pressure vessels, reactors, columns and custom-fabricated process equipment for a wide range of industries.",
+      "We manufacture engineered, custom-fabricated steel process equipment which includes pressure vessels, air receivers, heat exchangers, reactors & boilers, process piping skids, storage tanks & silos, along with structural steelwork and HVAC ducting.",
   },
   {
     question: "Do you provide custom-designed solutions?",
     answer:
-      "Yes. Most of our work is application-specific. We work with your process data, layouts and operating conditions to design equipment that fits your exact requirement.",
+      "Yes. Most of our work is application-specific. We design around your process data, operating conditions, layout constraints, and site requirements, then deliver end-to-end execution from engineering & detailing to fabrication, erection, and commissioning which ensures the final equipment fits your plant and performs reliably.",
   },
   {
     question: "Which industries do you actively serve?",
     answer:
-      "We serve chemical plants, effluent treatment, steel and power, fertilizers, petrochemicals, ship-building, man-made fibre and other process industries.",
+      "We support a wide range of industries including Oil & Gas, Chemicals & Petrochemicals, Fertilizers, Effluent Treatment, Steel, Shipbuilding, and Man-made Fibers, delivering dependable equipment built for demanding industrial service.",
   },
   {
     question: "What is your typical project turnaround time?",
     answer:
-      "Lead times depend on design complexity and material availability. Standard repeat designs are delivered faster, while custom projects are scheduled with clear timelines agreed at order stage.",
+      "Lead time varies by scope, design complexity, approvals, and material availability. For standard or repeat designs, we can usually deliver faster, while custom-engineered equipment is planned with a clear project schedule and covers engineering, procurement, fabrication, inspection/testing, and dispatch/erection which is agreed at the ordering stage. We keep you updated throughout and can prioritize/expedite when required to meet critical shutdown or commissioning dates.",
   },
   {
     question: "How do you ensure quality and reliability?",
     answer:
-      "Our facilities follow strict QA procedures with material traceability, qualified welding procedures, NDT, hydro / pneumatic testing and final inspection as per relevant standards.",
+      "We follow a disciplined QA/QC system, use qualified welding procedures, and maintain full traceability. Our safety-first culture and code-compliant practices help ensure consistent quality, reliable performance, and on-time delivery.",
+  },
+    {
+    question: "What materials do you work with?",
+    answer:
+      "We fabricate in Mild Steel, Stainless Steel, and other specialty/exotic metals as required by the application which is selected to match your process conditions, corrosion requirements, and applicable standards.",
   },
 ];
 

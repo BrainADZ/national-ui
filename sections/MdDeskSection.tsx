@@ -3,7 +3,7 @@
 export default function MdDeskSection() {
   return (
     <section className="relative bg-white py-14 lg:py-20">
-      <div className="mx-auto max-w-[1700px] px-2 lg:px-4">
+      <div className="mx-auto max-w-[1700px] px-4 lg:px-6">
         {/* Heading */}
         <div className="mb-10">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ee9d54]">

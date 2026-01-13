@@ -7,37 +7,37 @@ import { ArrowRight } from "lucide-react";
 
 const PRODUCTS = [
   {
-    title: "Forklift Radiator",
+    title: "Dowtherm Boiler",
     image:
       "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1400&h=1400&fit=crop",
     tag: "Material Handling",
     description:
-      "Engineered for demanding material-handling environments, Forklift Radiators are designed to deliver consistent cooling performance under continuous load cycles. Built with high-efficiency cores and reinforced fin structures, these radiators ensure optimal heat dissipation even in confined warehouse spaces and high-ambient conditions. Precision manufacturing, vibration resistance, and pressure-tested assemblies provide long service life, reduced overheating risks, and reliable performance across intensive lifting, stacking, and logistics operations.",
+      "Electric and gas-fired thermal oil (Dowtherm) heating systems are designed for stable, uniform process heating without steam. They provide precise temperature control, efficient heat transfer, and reliable continuous operation, making them ideal when consistent high-temperature performance and clean, controlled heating are required.",
   },
   {
-    title: "Agricultural Radiator",
+    title: "Surge Tanks",
     image:
       "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1400&h=1400&fit=crop",
     tag: "Agriculture",
     description:
-      "Agricultural Radiators are purpose-built to withstand harsh field conditions, including dust, debris, fluctuating temperatures, and extended operating hours. Featuring optimized fin density and robust tube construction, these radiators maintain stable engine temperatures during ploughing, harvesting, and irrigation activities. Their durable design minimizes clogging, improves airflow efficiency, and supports uninterrupted machinery performance, helping extend engine life and reduce downtime during critical farming seasons.",
+      "Surge tanks help stabilize pressure and flow by absorbing sudden spikes and fluctuations in the system. They reduce water hammer and pump cycling, protecting pumps, valves, and piping while improving overall system reliability and smooth operation.",
   },
   {
-    title: "Locomotive Radiator",
+    title: "Silos / Storage Tanks",
     image:
       "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1400&h=1400&fit=crop",
     tag: "Railways",
     description:
-      "Designed for heavy-duty railway applications, Locomotive Radiators offer superior thermal management for continuous, high-power engine operations. Manufactured using high-grade materials and precision welding techniques, they deliver exceptional cooling efficiency while withstanding vibration, pressure fluctuations, and long-distance travel conditions. These radiators support reliable locomotive performance, enhanced fuel efficiency, and reduced maintenance requirements across freight and passenger rail systems.",
+      "Silos and storage tanks built for safe, long-term storage of liquids and bulk materials with controlled filling and discharge. Designed for durability and easy integration, they can be customized with access points, venting, and required connections to suit site and process needs.",
   },
   {
-    title: "Genset Radiator",
+    title: "Immersion Coil / Jacketed Vessel",
     image:
       "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1400&h=1400&fit=crop",
     tag: "Power Backup",
     description:
-      "Genset Radiators are designed to ensure stable and efficient cooling for power generators operating under variable loads and extended runtime conditions. With carefully engineered fin geometry and pressure-tested cores, these radiators maintain optimal engine temperatures during peak demand and emergency power scenarios. Their robust construction supports continuous operation, enhances generator reliability, and minimizes the risk of overheating in industrial, commercial, and backup power installations.",
-  },
+      "Vessels with immersion coils or external jackets for efficient heating or cooling during mixing, batching, holding, or process operations. They deliver more consistent product temperatures and can be tailored with the right connections and configurations to match your heating/cooling circuit.",
+  }, 
 ];
 
 
@@ -158,9 +158,9 @@ export default function ProductsSection() {
           <div className="absolute inset-0 bg-linear-to-b from-black/10 via-black/15 to-black/55 transition-all duration-300 group-hover:to-black/65" />
 
           {/* Tag pill */}
-          <div className="absolute left-4 top-4 rounded-full bg-white/15 px-3 py-1 text-[8px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur">
+          {/* <div className="absolute left-4 top-4 rounded-full bg-white/15 px-3 py-1 text-[8px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur">
             {product.tag}
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom bar */}

@@ -62,18 +62,18 @@
 
           <p className="text-sm text-gray-400 leading-relaxed">
             <span className="font-medium text-gray-200">Address:</span><br />
-            Plot No. 45, Industrial Area,<br />
-            Vadodara, Gujarat - 390013
+Plot No. 1022, Cross Road No.87,<br/>
+ Sachin GIDC, Surat - 394230
           </p>
 
           <p className="mt-3 text-sm text-gray-400">
             <span className="font-medium text-gray-200">Phone:</span><br />
-            +91 98765 43210
+            +91 95740 11132
           </p>
 
           <p className="mt-3 text-sm text-gray-400">
             <span className="font-medium text-gray-200">Email:</span><br />
-            sales@nationalengineers.com
+            niraj@nationalengrs.com
           </p>
         </div>
       </div>

@@ -30,7 +30,7 @@ export default function HowWeWorkSection() {
   };
 
   return (
-    <section className="relative overflow-hidden md:px-0 px-2 py-16 lg:py-20">
+    <section className="relative overflow-hidden px-4 py-16 lg:py-20">
       {/* Background Image + Overlay */}
       <div className="absolute inset-0 z-0">
         <img
